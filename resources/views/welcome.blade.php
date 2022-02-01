@@ -1,12 +1,29 @@
 @extends('adminlte::page')
 
 
+
 @section('content_header')
-    <h1>Dashboard</h1>
+    <form action="{{route('logout')}}" method="post">
+        @csrf
+        <button type="submit" class="btn btn-danger float-right">logout
+            <span><i class="fas fa-fw fa-sign-out-alt"></i></span>
+        </button>
+    </form>
+    <div class="row ">
+        <h1>Dashboard</h1>
+    </div>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+
+    <!-- Content Header (Page header) -->
+    @include('main')
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+
+    <!-- /.content -->
+
 @stop
 
 @section('sidebar')
